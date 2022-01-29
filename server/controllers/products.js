@@ -41,5 +41,11 @@ module.exports = {
         const db = req.app.get('db')
         await db.products.updateExistingProduct([product_quantity, product_id])
         res.status(200).send("product updated!")
+    },
+    clearCheckout: (req, res) => {
+        const db = req.app.get('db')
+        db.products.clearCheckout()
+        res.status(200).send('Checkout Cart Cleared!')
     }
+    
 }

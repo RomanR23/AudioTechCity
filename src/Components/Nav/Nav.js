@@ -1,28 +1,65 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useHistory } from 'react-router';
+import { updateUser, logout } from '../../redux/reducer';
+import { useSelector, useDispatch } from 'react-redux'
 import './Nav.css'
 import axios from 'axios';
 
 function Nav(){
 
-const [user, setUser ] = useState(false);
-const [username, setUsername] = useState("")
+const [user, setUser] = useState(false)
+const history = useHistory();
 
-
+const currUser = useSelector(state => state.username);
+const dispatch = useDispatch();
 
 function getUser(){
     axios.get('/api/auth/me')
     .then(res => {
         if(res.data.username){
-        setUser(true)
-        setUsername(res.data.username)
+            dispatch(updateUser(res.data))
+            setUser(true)
         }
     }).catch(err => {
         console.log(`Error: ${err}`)
     })
 }
 
+function logoutUser(){
+    axios.post('/api/auth/logout')
+    .then(_ => {
+        alert("You Have Been Logged Out!")
+        dispatch(logout())
+        setUser(false)
+        history.push('/')
+    }).catch(err => {
+    console.log(`Error: ${err}`)
+    })
+}
+
+// function getUser(){
+//     axios.get('/api/auth/me')
+//     .then(res => {
+//         if(res.data.username){
+//         setUser(true)
+//         setUsername(res.data.username)
+//         }
+//     }).catch(err => {
+//         console.log(`Error: ${err}`)
+//     })
+// }
+
+// function logout(){
+//     axios.post('/api/auth/logout')
+//     .then(_ => {
+//         alert("You Have Been Logged Out!")
+//         setUser(false)
+//         history.push('/')
+//     }).catch(err => {
+//     console.log(`Error: ${err}`)
+//     })
+// }
 
 
     let userLogin = 
@@ -37,6 +74,8 @@ function getUser(){
 useEffect(()=> {
     getUser()
 },[])
+
+
 
     return (
         <div className = 'nav-container-main'>
@@ -54,7 +93,16 @@ useEffect(()=> {
                 </div>
                 
                 <div className='nav-user-login-container'>
-                    {userLogin}
+                    {!user
+                        ?
+                        userLogin
+                        : <div className="nav-user-logout-container">
+                        <div>
+                        <p className="nav-text-logout">{`Welcome, ${currUser}`}</p>
+                        </div>
+                        <button className="logout-button" onClick ={()=> logoutUser()}>Logout</button>
+                        </div>
+                    }
                 </div>
             </div>
 
@@ -62,7 +110,6 @@ useEffect(()=> {
     )
 }
 
-const mapStateToProps = (state) => {
-    return state; }
 
-export default withRouter(connect(mapStateToProps)(Nav));
+
+export default withRouter(Nav);

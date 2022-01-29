@@ -1,0 +1,94 @@
+.settings-container-main{
+    width:100%;
+    height:90vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 200% 200%;
+	animation: gradient 30s ease infinite;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.settings-content-box{
+    width:90vw;
+	height:79vh;
+    background-color: rgb(154, 242, 233);
+    border-radius: 5px;
+    outline:black 2px solid;
+    display: flex;
+    flex-direction: row;
+}
+
+.settings-settings-box{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    outline: 1px solid black;
+    border-radius: 2px;
+    gap:20px;
+}
+
+.settings-input-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:50%;
+    align-items: center;
+    gap:20px;
+}
+
+.settings-user-info-title{
+    text-align: center;
+    font-family:Jazz LET, fantasy;
+    font-size:35px;
+}
+
+.container{
+    height:4vh;
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
+
+.input-settings{
+    font-size:1vw;
+}
+
+.button-settings{
+    width:10vw;
+    outline: 1px solid black;
+    border-radius: 4px;
+    font-size:1vw;
+}
+
+.settings-user-box{
+    width:50%;
+    outline: 1px solid black;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+}
+
+.settings-hello-user{
+    text-align: center;
+    font-family:Jazz LET, fantasy;
+    font-size:35px;
+}
+
+.settings-current-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:50%;
+    width:100%;
+    align-items: center;
+    gap:10px;
+}
+
+.settings-current-info > p{
+    font-size:1.5vw;
+}

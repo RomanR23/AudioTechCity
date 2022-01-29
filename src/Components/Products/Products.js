@@ -10,7 +10,6 @@ const [cartItems, setCartItems] = useState([])
 
 
 function getProducts(){
-    console.log('getProdcutsFired')
     axios.get('/api/products')
     .then( res => {
         setProducts(res.data)
@@ -71,15 +70,11 @@ let array = products.map((product, index) => {
                 </div>
 
                 <div className = 'product-name-products'>{product.product_name} </div>
-                
                 <div className ="product-price-products">{`$${product.product_price}`}</div>
                 
                     <div className ="indv-product-button-container">
-
                         <button className="indv-quantity" onClick={()=> quantityDec(product)} >-</button>
-
                         <div className ="quantityCounter">{product.product_quantity}</div>
-                
                         <button className="indv-quantity" onClick={()=> quantityInc(product)}>+</button>
                     </div>
 

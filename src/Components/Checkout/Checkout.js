@@ -40,6 +40,35 @@ function Checkout(){
         .then(_ => getCartItems())
 }
 
+    function checkoutClear(){
+        axios.delete('/api/checkoutCart')
+        .then(_ => {
+        console.log('checkout cleared')
+        })
+    }
+
+function checkoutPay(){
+    const mappedCartItems = cartItems.map( item => { return { id: item.product_id, quantity: item.product_quantity}})
+    fetch('/create-checkout-session', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+        items: mappedCartItems
+        })
+    }).then(res => {
+        if(res.ok) return res.json()
+        return res.json().then(json => Promise.reject(json))
+    }).then(({url}) =>{
+        window.location = url
+    }).catch( e => {
+        console.log(e.error)
+    })
+
+    checkoutClear()
+}
+
 
     const cartArray = cartItems.map((product, index) => {
         return <div className="product-checkout-indv" key={index}>
@@ -81,7 +110,7 @@ function Checkout(){
                     <div className='checkout-payment-bottom'>
                     <p><b>Shipping: $0.00 PROMO APPLIED *</b></p>
                     <p><b>Cart Total:</b> ${itemsPrice.toFixed(2)}</p>
-                    <button className = 'checkout-pay-button'>Checkout & Pay</button>
+                    <button className = 'checkout-pay-button' id='button'  onClick= {()=> checkoutPay()}>Checkout & Pay</button>
                     </div>
                 </div>
 

@@ -13,22 +13,22 @@
     margin-left:5vw;
     flex-direction: column;
     width:40vw;
+    justify-content: center;
 }
 
 
 .nav-p-welcometo{
     margin:0;
     font-style: italic;
-    font-size: 16px;
-    margin-top:.3vh;
+    font-size: 1vw;
 }
 
 .nav-p-title-name{
     margin:0;
     font-family:Jazz LET, fantasy;
-    line-height: 50px;
     margin-left:30px;
-    font-size: 55px;
+    font-size: 50px;
+    height:5vh;
     color: rgb(0, 0, 0);
     cursor: pointer;
     letter-spacing: 6px;
@@ -93,6 +93,34 @@
 
 .nav-register-button{
     width:7vw;
+    height:3.5vh;
+    border-radius: 4px;
+    cursor:pointer;
+}
+
+.nav-user-logout-container{
+    display: flex;
+    gap:.5vw;
+    width:16vw;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+    border-radius: 6px;
+    margin:0;
+    height:5vh;
+    gap:20px;
+}
+
+.nav-text-logout{
+    font-weight:500;
+    margin:0;
+    margin-left:5px;
+}
+
+.logout-button{
+    width:5vw;
     height:3.5vh;
     border-radius: 4px;
     cursor:pointer;
