@@ -1,123 +1,123 @@
 .home-container-main {
-	width: 100%;
-	height: 90vh;
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 200% 200%;
-	animation: gradient 30s ease infinite;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  height: 90vh;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 200% 200%;
+  animation: gradient 30s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .home-content-box {
-	width: 90vw;
-	height: 79vh;
-	background-color: rgb(154, 242, 233);
-	border-radius: 5px;
-	color: white;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
-	outline: black 2px solid;
+  width: 90vw;
+  height: 79vh;
+  background-color: rgb(154, 242, 233);
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  outline: black 2px solid;
 }
 
 .home-limited-offer-div {
-	height: 5vh;
-	background-color: rgb(0, 0, 0);
-	text-align: center;
-	display: table;
-	border: 2px solid rgb(0, 0, 0);
+  height: 5vh;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  display: table;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .home-limited-offer-div > h1 {
-	display: table-cell;
-	vertical-align: middle;
-	font-size: 30px;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 30px;
 }
 
 .slideshow-pictures-box {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .picture-displayed {
-	width: 100%;
-	height: 65vh;
+  width: 100%;
+  height: 65vh;
 }
 
 .shop-now-box {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .shop-now-button {
-	width: 20vw;
-	height: 5vh;
-	border-radius: 4px;
-	cursor: pointer;
-	font-size: 30px;
-	letter-spacing: 2px;
+  width: 20vw;
+  height: 5vh;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 30px;
+  letter-spacing: 2px;
 }
 
 @media (max-width: 1200px) {
-	.picture-displayed {
-		height: 50vh;
-	}
+  .picture-displayed {
+    height: 50vh;
+  }
 
-	.shop-now-button {
-		width: 60vw;
-		height: 10vh;
-		font-size: 30px;
-		letter-spacing: 8px;
-	}
+  .shop-now-button {
+    width: 60vw;
+    height: 10vh;
+    font-size: 30px;
+    letter-spacing: 8px;
+  }
 
-	.slideshow-pictures-box {
-		gap: 70px;
-	}
+  .slideshow-pictures-box {
+    gap: 70px;
+  }
 
-	.home-limited-offer-div > h1 {
-		font-size: 20px;
-	}
+  .home-limited-offer-div > h1 {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 950px) {
-	.picture-displayed {
-		height: 40vh;
-	}
+  .picture-displayed {
+    height: 40vh;
+  }
 
-	.slideshow-pictures-box {
-		gap: 130px;
-	}
+  .slideshow-pictures-box {
+    gap: 130px;
+  }
 
-	.home-limited-offer-div > h1 {
-		font-size: 15px;
-	}
+  .home-limited-offer-div > h1 {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 600px) {
-	.picture-displayed {
-		height: 30vh;
-	}
+  .picture-displayed {
+    height: 30vh;
+  }
 
-	.shop-now-button {
-		width: 80vw;
-		height: 20vh;
-		font-size: 40px;
-		letter-spacing: 10px;
-	}
+  .shop-now-button {
+    width: 80vw;
+    height: 20vh;
+    font-size: 40px;
+    letter-spacing: 10px;
+  }
 }
