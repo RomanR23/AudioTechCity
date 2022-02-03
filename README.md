@@ -20,8 +20,8 @@ Used Node.js, Massive, Express, Express-Session for cookies, and Axios for endpo
 
 ### Database
 
-Used a SQLite3 database hosted on Heroku.
+Used a PostgreSQL database hosted on Heroku.
 
 ### Authentication
 
-Used bcrpyt for password salting and hashing.
+Used bcrypt for password salting and hashing before storing on Heroku.
