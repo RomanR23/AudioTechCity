@@ -92,7 +92,6 @@ function Settings() {
 
 	useEffect(() => {
 		userLogged();
-		console.log('useEffect fired');
 	}, [username, firstname, lastname, password]);
 
 	return (
